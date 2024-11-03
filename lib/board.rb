@@ -26,6 +26,12 @@ class Board
 
   private
 
+  def horizontal_winner?(player)
+    rows_won = []
+    3.times { |row| rows_won.push(row_winner?(row, player)) }
+    rows_won.any?(true)
+  end
+
   def row_winner?(row, player)
     @grid[row].all?(player)
   end
