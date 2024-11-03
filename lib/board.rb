@@ -11,6 +11,8 @@ class Board
   private
 
   def view_row(row)
-    puts "#{@grid[row][0]} | #{@grid[row][1]} | #{@grid[row][2]}"
+    @grid[row].each_with_index do |spot, index|
+      puts " #{spot} #{'|' unless index == 2}"
+    end
   end
 end
