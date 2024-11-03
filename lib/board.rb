@@ -30,7 +30,7 @@ class Board
     @grid[row].all?(player)
   end
 
-  def check_col_for_win(col, player)
+  def col_winner?(col, player)
     @grid.map { |row| row[col].mark == player }
          .none?(false)
   end
