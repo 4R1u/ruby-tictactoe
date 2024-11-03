@@ -26,11 +26,9 @@ class Board
 
   private
 
-  def check_row_for_win(row)
-    if @grid[row][0].mark == @grid[row][1].mark &&
-       @grid[row][1].mark == @grid[row][2].mark
-      @grid[row][0].mark
-    end
+  def row_winner?(row, player)
+    @grid[row].each { |spot| spot.mark == player }
+              .none?(false)
   end
 
   def check_col_for_win(col)
