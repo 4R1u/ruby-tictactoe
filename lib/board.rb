@@ -36,6 +36,13 @@ class Board
       @grid[1][col].mark == @grid[2][col].mark
   end
 
+  def check_diagonally_for_win
+    (@grid[0][0].mark == @grid[1][1].mark &&
+      @grid[1][1].mark == @grid[2][2].mark) ||
+      (@grid[0][2].mark == @grid[1][1].mark &&
+      @grid[1][1].mark == @grid[2][0].mark)
+  end
+
   def view_row(row)
     @grid[row].each_with_index do |spot, index|
       puts " #{spot} #{'|' unless index == 2}"
