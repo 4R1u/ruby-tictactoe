@@ -31,11 +31,9 @@ class Board
               .none?(false)
   end
 
-  def check_col_for_win(col)
-    if @grid[0][col].mark == @grid[1][col].mark &&
-       @grid[1][col].mark == @grid[2][col].mark
-      @grid[0][col].mark
-    end
+  def check_col_for_win(col, player)
+    @grid.map { |row| row[col].mark == player }
+         .none?(false)
   end
 
   def check_diagonally_for_win
