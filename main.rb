@@ -21,3 +21,8 @@ def mark_square(player, board)
     board.mark_o(row, col)
   end
 end
+
+def play_round(board)
+  x = mark_square('X', board) until x
+  o = mark_square('O', board) until o
+end
