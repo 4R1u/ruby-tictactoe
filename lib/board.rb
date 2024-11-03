@@ -26,6 +26,11 @@ class Board
 
   private
 
+  def check_row_for_win(row)
+    @grid[row][0].mark == @grid[row][1].mark &&
+      @grid[row][1].mark == @grid[row][2].mark
+  end
+
   def view_row(row)
     @grid[row].each_with_index do |spot, index|
       puts " #{spot} #{'|' unless index == 2}"
