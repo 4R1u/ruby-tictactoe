@@ -40,15 +40,15 @@ class Board
   end
 
   def bslash_winner?(player)
-    @grid[0][0].mark == @grid[1][1].mark &&
-      @grid[1][1].mark == @grid[2][2].mark &&
-      @grid[0][0].mark == player
+    diagonal = []
+    3.times { |i| diagonal.push(@grid[i][i]) }
+    diagonal.all?(player)
   end
 
   def fslash_winner?(player)
-    @grid[0][2].mark == @grid[1][1].mark &&
-      @grid[1][1].mark == @grid[2][0].mark &&
-      @grid[0][2].mark == player
+    diagonal = []
+    3.times { |i| diagonal.push(@grid[i][2 - i]) }
+    diagonal.all?(player)
   end
 
   def view_row(row)
