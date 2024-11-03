@@ -9,11 +9,21 @@ class Spot
   end
 
   def mark_x
-    @mark = 'X'
+    if @mark == ' '
+      @mark = 'X'
+      true
+    else
+      false
+    end
   end
 
   def mark_o
-    @mark = 'O'
+    if @mark == ' '
+      @mark = 'O'
+      true
+    else
+      false
+    end
   end
 
   def empty
