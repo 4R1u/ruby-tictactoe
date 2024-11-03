@@ -27,13 +27,17 @@ class Board
   private
 
   def check_row_for_win(row)
-    @grid[row][0].mark == @grid[row][1].mark &&
-      @grid[row][1].mark == @grid[row][2].mark
+    if @grid[row][0].mark == @grid[row][1].mark &&
+       @grid[row][1].mark == @grid[row][2].mark
+      @grid[row][0].mark
+    end
   end
 
   def check_col_for_win(col)
-    @grid[0][col].mark == @grid[1][col].mark &&
-      @grid[1][col].mark == @grid[2][col].mark
+    if @grid[0][col].mark == @grid[1][col].mark &&
+       @grid[1][col].mark == @grid[2][col].mark
+      @grid[0][col].mark
+    end
   end
 
   def check_diagonally_for_win
@@ -41,13 +45,17 @@ class Board
   end
 
   def check_bslash_for_win
-    @grid[0][0].mark == @grid[1][1].mark &&
-      @grid[1][1].mark == @grid[2][2].mark
+    if @grid[0][0].mark == @grid[1][1].mark &&
+       @grid[1][1].mark == @grid[2][2].mark
+      @grid[0][0].mark
+    end
   end
 
   def check_fslash_for_win
-    @grid[0][2].mark == @grid[1][1].mark &&
-      @grid[1][1].mark == @grid[2][0].mark
+    if @grid[0][2].mark == @grid[1][1].mark &&
+       @grid[1][1].mark == @grid[2][0].mark
+      @grid[0][2].mark
+    end
   end
 
   def view_row(row)
