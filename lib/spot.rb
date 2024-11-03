@@ -7,4 +7,12 @@ class Spot
   def initialize
     @mark = ''
   end
+
+  def mark_x
+    @mark = 'X'
+  end
+
+  def mark_o
+    @mark = 'O'
+  end
 end
