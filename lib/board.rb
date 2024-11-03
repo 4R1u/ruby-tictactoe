@@ -8,6 +8,13 @@ class Board
     @grid = Array.new(3) { Array.new(3, Spot.new) }
   end
 
+  def view
+    @grid.each_with_index do |row, index|
+      view_row(row)
+      puts '---|---|---' unless index == 2
+    end
+  end
+
   private
 
   def view_row(row)
