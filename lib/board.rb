@@ -37,10 +37,13 @@ class Board
   end
 
   def check_diagonally_for_win
-    (@grid[0][0].mark == @grid[1][1].mark &&
-      @grid[1][1].mark == @grid[2][2].mark) ||
-      (@grid[0][2].mark == @grid[1][1].mark &&
-      @grid[1][1].mark == @grid[2][0].mark)
+    @grid[0][0].mark == @grid[1][1].mark &&
+      @grid[1][1].mark == @grid[2][2].mark
+  end
+
+  def check_fslash_for_win
+    @grid[0][2].mark == @grid[1][1].mark &&
+      @grid[1][1].mark == @grid[2][0].mark
   end
 
   def view_row(row)
