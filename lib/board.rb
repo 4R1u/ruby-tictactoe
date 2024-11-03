@@ -20,6 +20,10 @@ class Board
     @grid[row][col].mark_o if @grid.dig(row, col)
   end
 
+  def mark_x(row, col)
+    @grid[row][col].mark_x if @grid.dig(row, col)
+  end
+
   private
 
   def view_row(row)
