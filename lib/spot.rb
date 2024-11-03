@@ -5,7 +5,7 @@ class Spot
   attr_reader :mark
 
   def initialize
-    @mark = ''
+    @mark = ' '
   end
 
   def mark_x
