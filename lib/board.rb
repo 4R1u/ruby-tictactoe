@@ -45,7 +45,7 @@ class Board
       @grid[0][0].mark == player
   end
 
-  def fslash_winner?
+  def fslash_winner?(player)
     @grid[0][2].mark == @grid[1][1].mark &&
       @grid[1][1].mark == @grid[2][0].mark &&
       @grid[0][2].mark == player
