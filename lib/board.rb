@@ -16,6 +16,10 @@ class Board
     nil
   end
 
+  def mark_o(row, col)
+    @grid[row][col].mark_o if @grid.dig(row, col)
+  end
+
   private
 
   def view_row(row)
