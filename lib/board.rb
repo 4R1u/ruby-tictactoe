@@ -37,6 +37,10 @@ class Board
   end
 
   def check_diagonally_for_win
+    check_fslash_for_win || check_bslash_for_win
+  end
+
+  def check_bslash_for_win
     @grid[0][0].mark == @grid[1][1].mark &&
       @grid[1][1].mark == @grid[2][2].mark
   end
