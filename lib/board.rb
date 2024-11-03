@@ -27,7 +27,7 @@ class Board
   private
 
   def row_winner?(row, player)
-    @grid[row].each { |spot| spot.mark == player }
+    @grid[row].map { |spot| spot.mark == player }
               .none?(false)
   end
 
