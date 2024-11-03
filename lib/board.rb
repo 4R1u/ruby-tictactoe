@@ -24,6 +24,12 @@ class Board
     @grid[row][col].mark_x if @grid.dig(row, col)
   end
 
+  def winner?(player)
+    horizontal_winner?(player) ||
+      vertical_winner?(player) ||
+      diagonal_winner?(player)
+  end
+
   private
 
   def horizontal_winner?(player)
