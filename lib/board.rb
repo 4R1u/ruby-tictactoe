@@ -21,7 +21,7 @@ class Board
   def view_row(row)
     @grid[row].each_with_index do |spot, index|
       puts " #{spot} #{'|' unless index == 2}"
-      nil
     end
+    nil
   end
 end
