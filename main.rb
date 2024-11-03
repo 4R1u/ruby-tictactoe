@@ -3,10 +3,21 @@
 require './lib/spot'
 require './lib/board'
 
-board = Board
-
 def input_coord
   row = 3
   row = gets.chomp.to_i until (0..2).cover?(row)
   row
+end
+
+def mark_square(player, board)
+  puts 'Enter row:'
+  row = input_coord
+  put 'Enter column'
+  col = input_coord
+  case player
+  when 'X'
+    board.mark_x(row, col)
+  when 'O'
+    board.mark_o(row, col)
+  end
 end
