@@ -30,6 +30,10 @@ class Board
       diagonal_winner?(player)
   end
 
+  def reset
+    @grid = Array.new(3) { Array.new(3, Spot.new) }
+  end
+
   private
 
   def horizontal_winner?(player)
