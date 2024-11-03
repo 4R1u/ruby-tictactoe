@@ -38,39 +38,26 @@ class Board
 
   def horizontal_winner?(player)
     rows_won = []
-    3.times { |row| rows_won.push(row_winner?(row, player)) }
+    3.times { |row| rows_won.push(@grid[row].all?(player)) }
     rows_won.any?(true)
-  end
-
-  def row_winner?(row, player)
-    @grid[row].all?(player)
   end
 
   def vertical_winner?(player)
     cols_won = []
-    3.times { |col| cols_won.push(col_winner?(col, player)) }
+    3.times do |col|
+      endcols_won.push(@grid.map do |row|
+        row[col].mark == player
+      end.none?(false))
+    end
     cols_won.any?(true)
   end
 
-  def col_winner?(col, player)
-    @grid.map { |row| row[col].mark == player }
-         .none?(false)
-  end
-
   def diagonal_winner?(player)
-    fslash_winner?(player) || bslash_winner?(player)
-  end
-
-  def bslash_winner?(player)
-    diagonal = []
-    3.times { |i| diagonal.push(@grid[i][i]) }
-    diagonal.all?(player)
-  end
-
-  def fslash_winner?(player)
-    diagonal = []
-    3.times { |i| diagonal.push(@grid[i][2 - i]) }
-    diagonal.all?(player)
+    fslash = []
+    3.times { |i| fslash.push(@grid[i][2 - i]) }
+    bslash = []
+    3.times { |i| bslash.push(@grid[i][i]) }
+    fslash.all?(player) || bslash.all?(player)
   end
 
   def view_row(row)
