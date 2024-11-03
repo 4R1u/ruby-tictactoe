@@ -15,4 +15,8 @@ class Spot
   def mark_o
     @mark = 'O'
   end
+
+  def empty
+    @mark = ' '
+  end
 end
