@@ -36,6 +36,12 @@ class Board
     @grid[row].all?(player)
   end
 
+  def vertical_winner?(player)
+    cols_won = []
+    3.times { |col| cols_won.push(col_winner?(col, player)) }
+    cols_won.any?(true)
+  end
+
   def col_winner?(col, player)
     @grid.map { |row| row[col].mark == player }
          .none?(false)
