@@ -35,22 +35,20 @@ class Board
          .none?(false)
   end
 
-  def check_diagonally_for_win
-    check_fslash_for_win || check_bslash_for_win
+  def diagonal_winner?(player)
+    fslash_winner?(player) || bslash_winner?(player)
   end
 
-  def check_bslash_for_win
-    if @grid[0][0].mark == @grid[1][1].mark &&
-       @grid[1][1].mark == @grid[2][2].mark
-      @grid[0][0].mark
-    end
+  def bslash_winner?(player)
+    @grid[0][0].mark == @grid[1][1].mark &&
+      @grid[1][1].mark == @grid[2][2].mark &&
+      @grid[0][0].mark == player
   end
 
-  def check_fslash_for_win
-    if @grid[0][2].mark == @grid[1][1].mark &&
-       @grid[1][1].mark == @grid[2][0].mark
-      @grid[0][2].mark
-    end
+  def fslash_winner?
+    @grid[0][2].mark == @grid[1][1].mark &&
+      @grid[1][1].mark == @grid[2][0].mark &&
+      @grid[0][2].mark == player
   end
 
   def view_row(row)
