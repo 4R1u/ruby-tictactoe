@@ -23,9 +23,11 @@ def mark_square(player, board)
 end
 
 def play_round(board)
+  puts 'X\'s turn:'
   x = mark_square('X', board) until x
   return true if board.winner?('X')
 
+  puts 'O\'s turn:'
   o = mark_square('O', board) until o
   board.winner?('O')
 end
