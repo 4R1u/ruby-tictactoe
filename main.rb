@@ -12,7 +12,7 @@ end
 def mark_square(player, board)
   puts 'Enter row:'
   row = input_coord
-  put 'Enter column'
+  puts 'Enter column'
   col = input_coord
   case player
   when 'X'
