@@ -27,6 +27,8 @@ def play_round(board)
   board.view
   return 'X' if board.winner?(:X)
 
+  return ' ' if board.full?
+
   puts "\n#{'O'.colorize(color: :red)}'s turn:"
   o = mark_square('O', board) until o
   board.view
@@ -43,11 +45,14 @@ def play_game(board)
   when 'O'
     result = 'O'.colorize(color: :red)
   end
+
+  return puts "Tied.\n\n\n" if result == ' '
+
   puts "#{result} is the winner.\n\n\n"
 end
 
 loop do
   play_game(Board.new)
-  puts 'Would you like to play again?[Y]\n\n'
+  puts "Would you like to play again?[Y]\n\n"
   break unless gets.chomp == 'Y'
 end

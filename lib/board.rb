@@ -37,6 +37,12 @@ class Board
     @grid = Array.new(3) { Array.new(3, Spot.new) }
   end
 
+  def full?
+    empty_squares = []
+    @grid.flatten.each { |spot| empty_squares << 1 if spot.mark == :' ' }
+    empty_squares.empty?
+  end
+
   private
 
   def horizontal_winner?(player)
