@@ -9,8 +9,8 @@ class Board
   end
 
   def view
-    @grid.each_with_index do |row, index|
-      view_row(row)
+    @grid.each_with_index do |_row, index|
+      view_row(index)
       puts '---|---|---' unless index == 2
     end
     nil
