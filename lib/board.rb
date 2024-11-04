@@ -39,7 +39,7 @@ class Board
 
   def horizontal_winner?(player)
     rows_won = []
-    3.times { |row| rows_won.push(@grid[row].all?(player)) }
+    3.times { |row| rows_won.push(@grid[row].all? { |spot| spot.mark == player }) }
     rows_won.any?(true)
   end
 
