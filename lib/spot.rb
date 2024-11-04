@@ -5,12 +5,12 @@ class Spot
   attr_reader :mark
 
   def initialize
-    @mark = ' '
+    @mark = :' '
   end
 
   def mark_x
-    if @mark == ' '
-      @mark = 'X'
+    if @mark == :' '
+      @mark = :X
       true
     else
       false
@@ -18,8 +18,8 @@ class Spot
   end
 
   def mark_o
-    if @mark == ' '
-      @mark = 'O'
+    if @mark == :' '
+      @mark = :O
       true
     else
       false
@@ -27,6 +27,6 @@ class Spot
   end
 
   def empty
-    @mark = ' '
+    @mark = :' '
   end
 end
