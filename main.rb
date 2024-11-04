@@ -29,3 +29,7 @@ def play_round(board)
   o = mark_square('O', board) until o
   board.winner?('O')
 end
+
+def play_game(board)
+  result = play_round(board) until result
+end
