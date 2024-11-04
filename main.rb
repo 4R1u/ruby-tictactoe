@@ -2,6 +2,7 @@
 
 require './lib/spot'
 require './lib/board'
+require 'colorize'
 
 def input_coords
   input = [-1, -1]
@@ -21,12 +22,12 @@ def mark_square(player, board)
 end
 
 def play_round(board)
-  puts 'X\'s turn:'
+  puts "#{'X'.colorize(color: :blue)}'s turn:"
   x = mark_square('X', board) until x
   board.view
   return 'X' if board.winner?(:X)
 
-  puts 'O\'s turn:'
+  puts "#{'O'.colorize(color: :red)}'s turn:"
   o = mark_square('O', board) until o
   board.view
   return 'O' if board.winner?(:O)
@@ -36,6 +37,12 @@ end
 
 def play_game(board)
   result = play_round(board) until result
+  case result
+  when 'X'
+    result = 'X'.colorize(color: :blue)
+  when 'O'
+    result = 'O'.colorize(color: :red)
+  end
   puts "#{result} is the winner."
 end
 
