@@ -45,7 +45,7 @@ class Board
   def vertical_winner?(player)
     cols_won = []
     3.times do |col|
-      endcols_won.push(@grid.map do |row|
+      cols_won.push(@grid.map do |row|
         row[col].mark == player
       end.none?(false))
     end
