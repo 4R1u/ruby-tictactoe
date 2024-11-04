@@ -6,3 +6,5 @@ source 'https://rubygems.org'
 
 gem 'rubocop', '~> 1.68', require: false
 gem 'rubocop-performance', require: false
+
+gem "colorize", "~> 1.1"
