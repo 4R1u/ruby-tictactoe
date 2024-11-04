@@ -11,7 +11,8 @@ class Board
   def view
     @grid.each_with_index do |_row, index|
       view_row(index)
-      puts "\n---|---|---" unless index == 2
+      puts "\n"
+      puts '---|---|---' unless index == 2
     end
     nil
   end
