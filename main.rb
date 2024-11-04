@@ -25,11 +25,13 @@ end
 def play_round(board)
   puts 'X\'s turn:'
   x = mark_square('X', board) until x
-  return true if board.winner?('X')
+  return 'X' if board.winner?('X')
 
   puts 'O\'s turn:'
   o = mark_square('O', board) until o
-  board.winner?('O')
+  return 'O' if board.winner?('O')
+
+  nil
 end
 
 def play_game(board)
