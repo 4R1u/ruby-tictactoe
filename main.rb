@@ -22,17 +22,17 @@ def mark_square(player, board)
 end
 
 def play_round(board)
-  puts "#{'X'.colorize(color: :blue)}'s turn:"
+  puts "\n#{'X'.colorize(color: :blue)}'s turn:"
   x = mark_square('X', board) until x
   board.view
   return 'X' if board.winner?(:X)
 
-  puts "#{'O'.colorize(color: :red)}'s turn:"
+  puts "\n#{'O'.colorize(color: :red)}'s turn:"
   o = mark_square('O', board) until o
   board.view
   return 'O' if board.winner?(:O)
 
-  nil
+  puts "\n"
 end
 
 def play_game(board)
@@ -43,11 +43,11 @@ def play_game(board)
   when 'O'
     result = 'O'.colorize(color: :red)
   end
-  puts "#{result} is the winner."
+  puts "#{result} is the winner.\n\n\n"
 end
 
 loop do
   play_game(Board.new)
-  puts 'Would you like to play again?[Y] '
+  puts 'Would you like to play again?[Y]\n\n'
   break unless gets.chomp == 'Y'
 end
