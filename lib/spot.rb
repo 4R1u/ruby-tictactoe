@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'colorize'
+
 # Represents one of the squares in the grid.
 class Spot
   attr_reader :mark
@@ -28,5 +30,16 @@ class Spot
 
   def empty
     @mark = :' '
+  end
+
+  def colored_mark
+    case @mark
+    when :X
+      'X'.colorize(color: :blue, background: :white)
+    when :O
+      'O'.colorize(color: :red, background: :white)
+    else
+      ' '.colorize(background: :white)
+    end
   end
 end

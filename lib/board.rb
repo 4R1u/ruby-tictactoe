@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'colorize'
 require_relative 'spot'
 
 # Represents the board on which the game will be played.
@@ -12,7 +13,7 @@ class Board
     @grid.each_with_index do |_row, index|
       view_row(index)
       puts "\n"
-      puts '---|---|---' unless index == 2
+      puts '---|---|---'.colorize(color: :black, background: :white) unless index == 2
     end
     nil
   end
@@ -63,7 +64,10 @@ class Board
 
   def view_row(row)
     @grid[row].each_with_index do |spot, index|
-      print " #{spot.mark} #{'|' unless index == 2}"
+      print ' '.colorize(color: :black, background: :white)
+      print spot.colored_mark
+      print ' '.colorize(color: :black, background: :white)
+      print '|'.colorize(color: :black, background: :white) unless index == 2
     end
     nil
   end
