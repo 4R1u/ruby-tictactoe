@@ -55,9 +55,9 @@ class Board
 
   def diagonal_winner?(player)
     fslash = []
-    3.times { |i| fslash.push(@grid[i][2 - i]) }
+    3.times { |i| fslash.push(@grid[i][2 - i].mark) }
     bslash = []
-    3.times { |i| bslash.push(@grid[i][i]) }
+    3.times { |i| bslash.push(@grid[i][i].mark) }
     fslash.all?(player) || bslash.all?(player)
   end
 
