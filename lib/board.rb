@@ -10,10 +10,11 @@ class Board
   end
 
   def view
+    puts '|---|---|---|'.colorize(color: :black, background: :white)
     @grid.each_with_index do |_row, index|
       view_row(index)
       puts "\n"
-      puts '---|---|---'.colorize(color: :black, background: :white) unless index == 2
+      puts '|---|---|---|'.colorize(color: :black, background: :white)
     end
     nil
   end
@@ -63,11 +64,12 @@ class Board
   end
 
   def view_row(row)
-    @grid[row].each_with_index do |spot, index|
+    print '|'.colorize(color: :black, background: :white)
+    @grid[row].each_with_index do |spot, _index|
       print ' '.colorize(color: :black, background: :white)
       print spot.colored_mark
       print ' '.colorize(color: :black, background: :white)
-      print '|'.colorize(color: :black, background: :white) unless index == 2
+      print '|'.colorize(color: :black, background: :white)
     end
     nil
   end
