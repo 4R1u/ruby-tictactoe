@@ -44,5 +44,5 @@ end
 loop do
   play_game(Board.new)
   puts 'Would you like to play again?[Y] '
-  break if gets.chomp == 'Y'
+  break unless gets.chomp == 'Y'
 end
