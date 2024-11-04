@@ -33,3 +33,9 @@ end
 def play_game(board)
   result = play_round(board) until result
 end
+
+loop do
+  play_game(Board.new)
+  puts 'Would you like to play again?[Y] '
+  break if gets.chomp == 'Y'
+end
