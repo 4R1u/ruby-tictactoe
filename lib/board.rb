@@ -62,7 +62,7 @@ class Board
 
   def view_row(row)
     @grid[row].each_with_index do |spot, index|
-      puts " #{spot} #{'|' unless index == 2}"
+      print " #{spot.mark} #{'|' unless index == 2}"
     end
     nil
   end
