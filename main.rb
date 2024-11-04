@@ -3,22 +3,20 @@
 require './lib/spot'
 require './lib/board'
 
-def input_coord
-  row = 3
-  row = gets.chomp.to_i until (0..2).cover?(row)
-  row
+def input_coords
+  input = [-1, -1]
+  input = gets.chomp.split until (0..2).cover?(input[0].to_i) && (0..2).cover?(input[1].to_i)
+  input
 end
 
 def mark_square(player, board)
-  puts 'Enter row:'
-  row = input_coord
-  puts 'Enter column'
-  col = input_coord
+  puts 'Enter row and column, separated by a space:'
+  coords = input_coords
   case player
   when 'X'
-    board.mark_x(row, col)
+    board.mark_x(coords[0].to_i, coords[1].to_i)
   when 'O'
-    board.mark_o(row, col)
+    board.mark_o(coords[0].to_i, coords[1].to_i)
   end
 end
 
