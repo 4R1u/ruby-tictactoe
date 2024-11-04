@@ -36,6 +36,7 @@ end
 
 def play_game(board)
   result = play_round(board) until result
+  puts "#{result} is the winner."
 end
 
 loop do
