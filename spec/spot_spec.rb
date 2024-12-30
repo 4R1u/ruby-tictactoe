@@ -29,4 +29,12 @@ describe Spot do
       expect(spot.mark).not_to eq(:O)
     end
   end
+
+  describe '#empty' do
+    it 'Empties existing mark' do
+      spot.mark_x
+      spot.empty
+      expect(spot.mark).to eq(:' ')
+    end
+  end
 end
