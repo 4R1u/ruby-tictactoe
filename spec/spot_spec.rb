@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../lib/spot'
+require 'colorize'
 
 describe Spot do
   subject(:spot) { described_class.new }
@@ -35,6 +36,15 @@ describe Spot do
       spot.mark_x
       spot.empty
       expect(spot.mark).to eq(:' ')
+    end
+  end
+
+  describe '#colored_mark' do
+    context 'when the mark is X' do
+      it 'returns blue X' do
+        spot.mark_x
+        expect(spot.colored_mark).to eq('X'.colorize(color: :blue, background: :white))
+      end
     end
   end
 end
