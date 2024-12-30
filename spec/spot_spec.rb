@@ -46,5 +46,12 @@ describe Spot do
         expect(spot.colored_mark).to eq('X'.colorize(color: :blue, background: :white))
       end
     end
+
+    context 'when the mark is O' do
+      it 'returns red O' do
+        spot.mark_o
+        expect(spot.colored_mark).to eq('O'.colorize(color: :red, background: :white))
+      end
+    end
   end
 end
