@@ -38,9 +38,8 @@ class Board
   end
 
   def full?
-    empty_squares = []
-    @grid.flatten.each { |spot| empty_squares << 1 if spot.mark == :' ' }
-    empty_squares.empty?
+    @grid.each { |row| row.each { |item| return false if item.mark == :' ' } }
+    true
   end
 
   private
