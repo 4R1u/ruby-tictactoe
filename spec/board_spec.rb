@@ -171,4 +171,12 @@ describe Board do
       end
     end
   end
+
+  describe '#full?' do
+    context 'the board is empty' do
+      it 'returns false' do
+        expect(spot.full?).to be(false)
+      end
+    end
+  end
 end
