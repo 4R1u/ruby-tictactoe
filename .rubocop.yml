@@ -12,3 +12,15 @@
 require: rubocop-performance
 AllCops:
   NewCops: enable
+AllCops:
+  Exclude:
+    - 'Gemfile'
+    - 'spec/spec_helper.rb'
+  NewCops: enable
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/*'
+Layout/LineLength:
+  Exclude:
+    - 'spec/*'
+  
