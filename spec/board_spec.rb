@@ -192,5 +192,23 @@ describe Board do
         expect(game.full?).to be(false)
       end
     end
+
+    context 'when the board is full' do
+      before do
+        game.mark_o(0, 0)
+        game.mark_x(0, 1)
+        game.mark_o(0, 2)
+        game.mark_x(1, 0)
+        game.mark_o(1, 1)
+        game.mark_x(1, 2)
+        game.mark_o(2, 0)
+        game.mark_x(2, 1)
+        game.mark_o(2, 2)
+      end
+
+      it 'returns true' do
+        expect(game.full?).to be(true)
+      end
+    end
   end
 end
