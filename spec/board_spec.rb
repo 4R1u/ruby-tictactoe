@@ -178,5 +178,19 @@ describe Board do
         expect(game.full?).to be(false)
       end
     end
+
+    context 'the board is neither full, nor empty' do
+      before do
+        game.mark_x(0, 0)
+        game.mark_o(0, 1)
+        game.mark_x(0, 2)
+        game.mark_o(1, 0)
+        game.mark_x(1, 1)
+      end
+
+      it 'returns false' do
+        expect(game.full?).to be(false)
+      end
+    end
   end
 end
