@@ -53,5 +53,11 @@ describe Spot do
         expect(spot.colored_mark).to eq('O'.colorize(color: :red, background: :white))
       end
     end
+
+    context "when the mark is ' '" do
+      it 'returns a white space' do
+        expect(spot.colored_mark).to eq(' '.colorize(background: :white))
+      end
+    end
   end
 end
