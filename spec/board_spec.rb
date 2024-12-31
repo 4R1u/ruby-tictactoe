@@ -173,13 +173,13 @@ describe Board do
   end
 
   describe '#full?' do
-    context 'the board is empty' do
+    context 'when the board is empty' do
       it 'returns false' do
         expect(game.full?).to be(false)
       end
     end
 
-    context 'the board is neither full, nor empty' do
+    context 'when the board is neither full, nor empty' do
       before do
         game.mark_x(0, 0)
         game.mark_o(0, 1)
