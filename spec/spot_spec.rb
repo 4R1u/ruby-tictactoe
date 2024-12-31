@@ -19,15 +19,19 @@ describe Spot do
   end
 
   describe '#mark_o' do
-    it 'changes mark when mark is empty' do
-      spot.mark_o
-      expect(spot.mark).to eq(:O)
+    context 'when mark is empty' do
+      it 'changes mark' do
+        spot.mark_o
+        expect(spot.mark).to eq(:O)
+      end
     end
 
-    it "doesn't change when the spot has already been marked" do
-      spot.mark_x
-      spot.mark_o
-      expect(spot.mark).not_to eq(:O)
+    context 'when spot has already been marked' do
+      it "doesn't change" do
+        spot.mark_x
+        spot.mark_o
+        expect(spot.mark).not_to eq(:O)
+      end
     end
   end
 
